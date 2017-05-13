@@ -20,7 +20,11 @@ public class MyRouteBuilder extends RouteBuilder {
      */
     public void configure() {
 
+<<<<<<< HEAD
         // here is a sample which set a random body then performs content
+=======
+        // here is a sample which set a raondom body then performs content
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
         // based routing on the message using method references
         from("timer:simple?period=1000")
             .process()

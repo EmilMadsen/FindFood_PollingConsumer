@@ -1,5 +1,6 @@
 package com.mycompany.cameldemo.databases.publisher;
 
+<<<<<<< HEAD
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,6 +10,10 @@ import org.sql2o.Sql2o;
 
 import com.mycompany.cameldemo.model.*;
 
+=======
+import org.sql2o.Sql2o;
+
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 /**
  * Created by Emilo on 11-05-2017.
  */
@@ -16,6 +21,10 @@ public class PublisherRepository
 {
     private static Sql2o sql2o;
     private final static String DB_URL = "mysql://80.255.6.114:3306/FindFood_Publisher"; // Use when developing to test on localhost
+<<<<<<< HEAD
+=======
+//    public final static String DB_URL = "mysql://localhost:3306/FindFood_Publisher"; // Use when creating Jar-file to be run on server
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
     private final static String DB_USER = "FF_Publisher";
     private final static String DB_PASS = "yQjS6yiA";
 
@@ -26,6 +35,7 @@ public class PublisherRepository
             PublisherRepository.sql2o = new Sql2o(DB_URL, DB_USER, DB_PASS);
         }
     }
+<<<<<<< HEAD
     
     public Collection<Allergy> getAllergies(Date lastPoll)
     {
@@ -247,5 +257,10 @@ public class PublisherRepository
             return new ArrayList<>();
         }
         return menuRecipes;
+=======
+
+    protected static Sql2o getSql2o() {
+        return sql2o;
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
     }
 }

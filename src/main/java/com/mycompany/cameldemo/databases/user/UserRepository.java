@@ -1,10 +1,15 @@
 package com.mycompany.cameldemo.databases.user;
 
+<<<<<<< HEAD
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
 import com.mycompany.cameldemo.model.Model;
 
+=======
+import org.sql2o.Sql2o;
+
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 /**
  * Created by Emilo on 11-05-2017.
  */
@@ -27,6 +32,7 @@ public class UserRepository
     protected static Sql2o getSql2o() {
         return sql2o;
     }
+<<<<<<< HEAD
     
     protected void executeUpdate(String sql, Model model)
     {
@@ -50,4 +56,6 @@ public class UserRepository
 //    {
 //    	return false;
 //    }
+=======
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 }

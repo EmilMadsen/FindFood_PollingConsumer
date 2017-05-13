@@ -1,5 +1,6 @@
 package com.mycompany.cameldemo.model;
 
+<<<<<<< HEAD
 import com.mycompany.cameldemo.databases.user.MeasuredIngredientsRepository;
 
 /**
@@ -15,6 +16,20 @@ public class MeasuredIngredient implements Model
 
 //    public MeasuredIngredient(){}
     
+=======
+/**
+ * Created by Emilo on 11-05-2017.
+ */
+public class MeasuredIngredient
+{
+    private int measuredIngredientId;
+    private Ingredient ingredient;
+    private double amount;
+    private String measure;
+
+    public MeasuredIngredient(){}
+
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
     public int getMeasuredIngredientId() {
         return measuredIngredientId;
     }
@@ -23,6 +38,7 @@ public class MeasuredIngredient implements Model
         this.measuredIngredientId = measuredIngredientId;
     }
 
+<<<<<<< HEAD
     public int getRecipeId() {
         return recipeId;
     }
@@ -37,6 +53,14 @@ public class MeasuredIngredient implements Model
 
     public void setIngredientId(int ingredientId) {
         this.ingredientId = ingredientId;
+=======
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
     }
 
     public double getAmount() {
@@ -54,6 +78,7 @@ public class MeasuredIngredient implements Model
     public void setMeasure(String measure) {
         this.measure = measure;
     }
+<<<<<<< HEAD
 
 	@Override
 	public void send() 
@@ -79,4 +104,6 @@ public class MeasuredIngredient implements Model
 	{
 		return "" + measuredIngredientId + " " + recipeId + " " + ingredientId + " " + amount + " " + measure;
 	}
+=======
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 }

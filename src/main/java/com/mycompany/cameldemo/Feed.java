@@ -1,18 +1,12 @@
-package com.mycompany.cameldemo.model;
-
-<<<<<<< HEAD
-import com.mycompany.cameldemo.databases.user.AllergiesRepository;
-
-/**
- * Created by Emilo on 11-05-2017.
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-public class Allergy implements Model {
-=======
-/**
- * Created by Emilo on 11-05-2017.
- */
-public class Allergy {
->>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
+package com.mycompany.cameldemo;
+
+public class Feed
+{
     private int allergyId;
     private String allergyName;
     private String allergyDescription;
@@ -40,34 +34,10 @@ public class Allergy {
     public void setAllergyDescription(String allergyDescription) {
         this.allergyDescription = allergyDescription;
     }
-
+    
     @Override
     public String toString()
     {
         return '\n' + "ID: " + allergyId + '\n' + "Name: " + allergyName + '\n' + "Description: " + allergyDescription;
     }
-<<<<<<< HEAD
-
-	@Override
-	public void send() 
-	{
-		AllergiesRepository repo = new AllergiesRepository();
-		String message = "Allergy " + allergyId + " was ";
-		if(repo.exists(allergyId)) 
-		{
-			repo.update(this);
-			message += "updated";
-		}
-		else
-		{
-			repo.create(this);
-			message += "created";
-		}
-		
-		System.out.println(message);
-	}
-
-	
-=======
->>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 }

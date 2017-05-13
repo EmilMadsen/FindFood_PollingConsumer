@@ -16,7 +16,11 @@ public class PollingConfiguration
     private String query;
 
     @UriParam(defaultValue = "60000")
+<<<<<<< HEAD
     private int delay = 20000;
+=======
+    private int delay = 10000;
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 
     public int getDelay() 
     {

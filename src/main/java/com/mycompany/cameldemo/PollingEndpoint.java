@@ -9,6 +9,10 @@ import org.apache.camel.spi.UriEndpoint;
 @UriEndpoint(scheme= "polling", title= "Polling", syntax= "polling://operationPath", consumerOnly= true, consumerClass= PollingConsumer.class, label= "polling")
 public class PollingEndpoint extends DefaultPollingEndpoint
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
     private String operationPath;
     private PollingConfiguration configuration;
     

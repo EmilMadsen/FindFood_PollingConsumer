@@ -1,21 +1,58 @@
 package com.mycompany.cameldemo.model;
 
+<<<<<<< HEAD
 import com.mycompany.cameldemo.databases.user.RecipesRepository;
+=======
+import java.util.Collection;
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 
 /**
  * Created by Emilo on 11-05-2017.
  */
+<<<<<<< HEAD
 public class Recipe implements Model {
+=======
+public class Recipe {
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 
     private int recipeId;
     private String recipeName;
     private String recipeDescription;
     private String recipeImageFilePath;
+<<<<<<< HEAD
     private int recipeTypeId;
     private String publisherName;
 
     public Recipe(){}
 
+=======
+    private RecipeType recipeType;
+    private String publisherName;
+    private Collection<MeasuredIngredient> measuredIngredients;
+
+    public Recipe(){}
+
+    public Recipe(String name, String description, String imageFilePath,
+                  RecipeType recipeType, Collection<MeasuredIngredient> measuredIngredients){
+        this.recipeId = 0;
+        this.recipeName = name;
+        this.recipeDescription = description;
+        this.recipeImageFilePath = imageFilePath;
+        this.recipeType = recipeType;
+        this.measuredIngredients = measuredIngredients;
+    }
+
+    public Recipe(int id, String name, String description, String imageFilePath,
+                  RecipeType recipeType, Collection<MeasuredIngredient> measuredIngredients){
+        this.recipeId = id;
+        this.recipeName = name;
+        this.recipeDescription = description;
+        this.recipeImageFilePath = imageFilePath;
+        this.recipeType = recipeType;
+        this.measuredIngredients = measuredIngredients;
+    }
+
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
     public int getRecipeId() {
         return recipeId;
     }
@@ -48,12 +85,29 @@ public class Recipe implements Model {
         this.recipeImageFilePath = recipeImageFilePath;
     }
 
+<<<<<<< HEAD
     public int getRecipeTypeId() {
         return recipeTypeId;
     }
 
     public void setRecipeTypeId(int recipeTypeId) {
         this.recipeTypeId = recipeTypeId;
+=======
+    public RecipeType getRecipeType() {
+        return recipeType;
+    }
+
+    public void setRecipeType(RecipeType recipeType) {
+        this.recipeType = recipeType;
+    }
+
+    public Collection<MeasuredIngredient> getMeasuredIngredients() {
+        return measuredIngredients;
+    }
+
+    public void setMeasuredIngredients(Collection<MeasuredIngredient> measuredIngredients) {
+        this.measuredIngredients = measuredIngredients;
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
     }
 
     public String getPublisherName() {
@@ -63,6 +117,7 @@ public class Recipe implements Model {
     public void setPublisherName(String publisherName) {
         this.publisherName = publisherName;
     }
+<<<<<<< HEAD
 
 	@Override
 	public void send() 
@@ -82,4 +137,6 @@ public class Recipe implements Model {
 		
 		System.out.println(message);
 	}
+=======
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 }

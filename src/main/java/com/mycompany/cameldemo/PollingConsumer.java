@@ -22,9 +22,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+<<<<<<< HEAD
 import com.mycompany.cameldemo.databases.publisher.PublisherRepository;
 import com.mycompany.cameldemo.model.*;
 
+=======
+import com.mycompany.cameldemo.databases.publisher.AllergyRepository;
+import com.mycompany.cameldemo.databases.publisher.PublisherRepository;
+import com.mycompany.cameldemo.model.Allergy;
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.impl.ScheduledPollConsumer;
@@ -61,15 +67,23 @@ public class PollingConsumer extends ScheduledPollConsumer
             now = new Date(utilDate.getTime());
         }
 
+<<<<<<< HEAD
         System.out.println("Poll #" + count + " begun");
         
         String operationPath = endpoint.getOperationPath();
         if(operationPath.equals("queryDatabase")) return processDatabaseQuery();
+=======
+        System.out.println("new poll " + count);
+        String operationPath = endpoint.getOperationPath();
+
+        if (operationPath.equals("search/feeds")) return processSearchFeeds();
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 
         // only one operation implemented for now !
         throw new IllegalArgumentException("Incorrect operation: " + operationPath);
     }
 
+<<<<<<< HEAD
     private int processDatabaseQuery() throws Exception 
     {
         //Query query = new Query();
@@ -108,11 +122,54 @@ public class PollingConsumer extends ScheduledPollConsumer
             
             Exchange exchange = getEndpoint().createExchange();
             exchange.getIn().setBody(collections, ArrayList.class);
+=======
+    private JsonObject performGetRequest() throws ClientProtocolException, IOException 
+    {
+        HttpClient client = HttpClientBuilder.create().build();
+        //HttpGet request = new HttpGet("http://cloud.feedly.com/v3/" + uri);
+        HttpGet request = new HttpGet("http://80.255.6.114:4567/polling");
+        HttpResponse response = client.execute(request);
+        int statusCode = response.getStatusLine().getStatusCode();
+        if (statusCode != 200) throw new RuntimeException("Feedly API returned wrong code: " + statusCode);
+
+        JsonParser parser = new JsonParser();
+        InputStreamReader sr = new InputStreamReader(response.getEntity().getContent(), "UTF-8");
+        BufferedReader br = new BufferedReader(sr);
+        JsonObject json = (JsonObject) parser.parse(br);
+        br.close();
+        sr.close();
+
+        return json;
+    }
+
+    private int processSearchFeeds() throws Exception 
+    {
+        AllergyRepository repo = new AllergyRepository();
+        try {
+            Collection<Allergy> allergies = repo.getAll(now);
+            Exchange exchange = getEndpoint().createExchange();
+            exchange.getIn().setBody(allergies, ArrayList.class);
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
             getProcessor().process(exchange);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+<<<<<<< HEAD
         return 1;
     }
+=======
+
+
+        return 1;
+    }
+
+    private int processDatabaseQuery()
+    {
+
+
+        return 1;
+    }
+
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 }

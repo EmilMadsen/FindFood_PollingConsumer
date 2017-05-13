@@ -24,11 +24,21 @@ public class MainApp
                 PropertiesComponent properties = new PropertiesComponent();
                 properties.setLocation("classpath:polling.properties");
                 getContext().addComponent("properties", properties);
+<<<<<<< HEAD
                 SendingProcessor processor = new SendingProcessor();
                 
 //                from("polling://queryDatabase").split(body()).split(body()).log(body().toString());
                 from("polling://queryDatabase").split(body()).split(body()).process(processor);
                 
+=======
+
+                //from("polling://search/feeds?delay={{delay}}&query={{query}}")
+
+
+                from("polling://search/feeds?delay={{delay}}&query={{query}}")
+                        .split(body())
+                        .log(body().toString());
+>>>>>>> ff29ce4d6c79ff861c2ee1f5149e096682c9f84e
 
 
             }
